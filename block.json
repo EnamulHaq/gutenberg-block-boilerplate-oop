@@ -1,13 +1,13 @@
 {
-    "name": "wds-blocks",
-    "title": "WDS Blocks",
+    "name": "mctp-blocks",
+    "title": "BDCPT Blocks",
     "category": "text",
     "icon": "edit",
     "description": "BoomDevs library of Gutenberg blocks.",
     "supports": {
         "html": false
     },
-    "textdomain": "wdsblocks",
+    "textdomain": "bdcpt",
     "editorScript": "file:./build/index.js",
     "editorStyle": "file:./build/index.css",
     "style": "file:./build/style-index.css"
