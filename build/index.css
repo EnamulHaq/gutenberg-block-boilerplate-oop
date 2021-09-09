@@ -1,0 +1,58 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/blocks/starter/editor.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+[data-type="wdsblocks/starter"] {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.edit-mode {
+  border: 1px dashed #808080;
+  padding: 2rem;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.edit-mode .input-label {
+  font-size: 12px;
+  opacity: 0.75;
+  padding: 0 0 5px;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.edit-mode .input-label span.req {
+  color: #b83131;
+  display: inline-block;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.edit-mode .input-label::after {
+  display: block;
+  content: "";
+  width: 15px;
+  height: 1px;
+  margin-top: 5px;
+  background-color: #efefef;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.edit-mode [role=textbox] + .input-label {
+  padding-top: 15px;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.preview-mode {
+  position: relative;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.preview-mode::before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.preview-mode .block-list-appender,
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.preview-mode .input-hidden,
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.preview-mode .input-label {
+  display: none;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.edit-mode {
+  border: 1px dashed #808080;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.preview-mode {
+  padding: 0;
+}
+[data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.preview-mode .block-list-appender {
+  display: none;
+}
+
+/*# sourceMappingURL=index.css.map*/
