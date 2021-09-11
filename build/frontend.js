@@ -9,7 +9,7 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony importTable */ var _utils_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/config */ "./src/utils/config.js");
+/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/config */ "./src/utils/config.js");
 
 const starterClass = `wp-block-${_utils_config__WEBPACK_IMPORTED_MODULE_0__.PREFIX}`;
 /**
@@ -51,8 +51,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "PREFIX": function() { return /* binding */ PREFIX; },
 /* harmony export */   "CONTAINER_CLASS": function() { return /* binding */ CONTAINER_CLASS; }
 /* harmony export */ });
-/* harmony importTable */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
-/* harmony importTable */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
  // Global block prefix
 
 const PREFIX = 'multipurpose-compression-table'; // Container Class (.container, .row, etc)
@@ -75,7 +75,7 @@ module.exports = window["wp"]["hooks"];
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/
+/******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -89,14 +89,14 @@ module.exports = window["wp"]["hooks"];
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/
+/******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/
+/******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	!function() {
@@ -109,7 +109,7 @@ module.exports = window["wp"]["hooks"];
 /******/ 			return getter;
 /******/ 		};
 /******/ 	}();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -121,12 +121,12 @@ module.exports = window["wp"]["hooks"];
 /******/ 			}
 /******/ 		};
 /******/ 	}();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function() {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -137,7 +137,7 @@ module.exports = window["wp"]["hooks"];
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	}();
-/******/
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -146,7 +146,7 @@ var __webpack_exports__ = {};
   !*** ./src/frontend.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony importTable */ var _blocks_table_frontend__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/table/frontend */ "./src/blocks/table/frontend/index.js");
+/* harmony import */ var _blocks_table_frontend__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/table/frontend */ "./src/blocks/table/frontend/index.js");
 
 _blocks_table_frontend__WEBPACK_IMPORTED_MODULE_0__["default"].init();
 }();

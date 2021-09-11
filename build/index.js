@@ -19,7 +19,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _importTable_ImportTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./importTable/ImportTable */ "./src/blocks/table/importTable/ImportTable.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/table/editor.scss");
+/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/config */ "./src/blocks/table/utils/config.js");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/table/editor.scss");
+
+
 
 
 
@@ -28,6 +33,8 @@ __webpack_require__.r(__webpack_exports__);
 function Edit(props) {
   const {
     attributes: {
+      title,
+      message,
       showModal
     },
     setAttributes
@@ -46,12 +53,28 @@ function Edit(props) {
     console.log("Hello world");
   };
 
+  console.log(props.attributes.message);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, showModal ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_importTable_ImportTable__WEBPACK_IMPORTED_MODULE_3__["default"], null) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "mctb-table-import-button",
     onClick: testFun
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "dashicons dashicons-editor-table"
-  }), "Import Table")));
+  }), "Import Table"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichTextToolbarButton, null)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Message', 'gutenpride'),
+    onChange: val => setAttributes({
+      message: val
+    })
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `mctb__table_container`
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("table", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, null)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "block-title",
+    tagName: "h2",
+    formattingControls: [],
+    onChange: onChangeTitle,
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Block Title', 'mctb'),
+    keepPlaceholderOnFocus: true,
+    value: title
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, "Enamul"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, "22")))));
 }
 
 /***/ }),
@@ -211,6 +234,63 @@ function Save(props) {
 
 /***/ }),
 
+/***/ "./src/blocks/table/utils/config.js":
+/*!******************************************!*\
+  !*** ./src/blocks/table/utils/config.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "INNER_BLOCKS_PROPS": function() { return /* binding */ INNER_BLOCKS_PROPS; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/config */ "./src/utils/config.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
+
+ // importTable { __ } from '@wordpress/i18n';
+
+/**
+ * Filter props for starter InnerBlocks.
+ *
+ * @author BoomDevs
+ * @since  2.0.0
+ * @param {Object} [props] InnerBlocks props.
+ */
+
+const INNER_BLOCKS_PROPS = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.applyFilters)(`${_utils_config__WEBPACK_IMPORTED_MODULE_1__.PREFIX}.starter.innerBlocksProps`, {
+  allowedBlocks: ['core/paragraph', 'core/buttons', 'core/image'],
+  template: [
+    /** Sample core block template structure
+      [
+      'core/heading',
+      {
+      content: __( 'Title', 'wdsblocks' ),
+      level: 3,
+      align: 'center',
+      },
+      ],
+      [
+      'core/paragraph',
+      {
+      content: __( 'Content', 'wdsblocks' ),
+      align: 'center',
+      },
+      ],
+      [
+      'core/buttons',
+      { align: 'center' },
+      [ [ 'core/button', { text: __( 'Read More', 'wdsblocks' ) } ] ],
+      ],
+     */
+  ]
+});
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -295,6 +375,16 @@ module.exports = window["wp"]["blockEditor"];
 /***/ (function(module) {
 
 module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["components"];
 
 /***/ }),
 
