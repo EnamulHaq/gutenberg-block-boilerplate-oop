@@ -1,0 +1,43 @@
+@import '../../sass/mixins';
+[data-type='wdsblocks/starter'] {
+	margin-bottom: 0;
+	margin-top: 0;
+
+	.wp-block-wdsblocks-starter {
+		@include edit-mode;
+		@include preview-mode;
+
+		&.edit-mode {
+			border: 1px dashed $color-grey;
+		}
+
+		&.preview-mode {
+			padding: 0;
+
+			.block-list-appender {
+				display: none;
+			}
+		}
+	}
+
+}
+.mctb-table-import-button{
+  background: #f9fcf4;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  background-image: -webkit-linear-gradient(
+				  315deg, #492cdd 0%, #a5095f 100%);
+  background-image: -o-linear-gradient(315deg, #492cdd 0%, #a5095f 100%);
+  background-image: linear-gradient(
+				  135deg, #492cdd 0%, #a5095f 100%);
+  color: #fff;
+  border-radius: 0;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+
+  span {
+	margin-right: 10px;
+  }
+}

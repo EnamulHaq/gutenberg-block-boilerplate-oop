@@ -74,9 +74,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-multipurpose-compression-t
  * @since    1.0.0
  */
 function run_multipurpose_compression_table () {
-
 	$plugin = new Multipurpose_Compression_Table();
 	$plugin->run();
-
 }
 run_multipurpose_compression_table ();

@@ -1,6 +1,6 @@
-/*!*******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/blocks/starter/editor.scss ***!
-  \*******************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/blocks/table/editor.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
 [data-type="wdsblocks/starter"] {
   margin-bottom: 0;
   margin-top: 0;
@@ -53,6 +53,22 @@
 }
 [data-type="wdsblocks/starter"] .wp-block-wdsblocks-starter.preview-mode .block-list-appender {
   display: none;
+}
+
+.mctb-table-import-button {
+  background: #f9fcf4;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(135deg, #492cdd 0%, #a5095f 100%);
+  color: #fff;
+  border-radius: 0;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+}
+.mctb-table-import-button span {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=index.css.map*/

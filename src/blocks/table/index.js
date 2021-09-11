@@ -11,15 +11,14 @@ import './frontend/style.scss';
  * @since  2.0.0
  * @see    https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-registerBlockType(`${ PREFIX }/starter`, {
-    title: __('Starter Block', 'mctb'),
+registerBlockType(`${ PREFIX }/table`, {
+    title: __('MCTB Table', 'mctb'),
     description: __(
-        'A starter block with a RichText heading and color options.',
+        'A Ecommerce product listing table.',
         'mctb'
     ),
-    icon: 'admin-network',
+    icon: 'editor-table',
     category: 'bdpct-blocks',
-    keywords: [__('starter block, richtext', 'mctb')],
     attributes: {
         showPreview: {
             type: 'boolean',
@@ -62,7 +61,7 @@ registerBlockType(`${ PREFIX }/starter`, {
                 color: '#F47C48',
                 textAlign: 'center',
             },
-            title: __('Starter Block', 'mctb'),
+            title: __('MCTB Table', 'mctb'),
         },
     },
     edit,

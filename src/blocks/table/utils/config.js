@@ -1,7 +1,7 @@
 import { applyFilters } from '@wordpress/hooks';
 import { PREFIX } from '../../../utils/config';
 
-// import { __ } from '@wordpress/i18n';
+// importTable { __ } from '@wordpress/i18n';
 
 /**
  * Filter props for starter InnerBlocks.

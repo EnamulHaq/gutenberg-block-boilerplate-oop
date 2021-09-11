@@ -21,10 +21,11 @@
  * @author     BoomDevs <admin@boomdevs.com>
  */
 class Multipurpose_Compression_Table_Admin {
+
 	// Define our assets.
 	public $editor_script   = 'build/index.js';
 	public $editor_style    = 'build/index.css';
-	
+
 	/**
 	 * The ID of this plugin.
 	 *
@@ -59,7 +60,7 @@ class Multipurpose_Compression_Table_Admin {
 		$this->block_dependencies = $dependencies;
 		// Verify we have an editor script.
 		if ( ! file_exists( plugin_dir_path( dirname( __FILE__ ) ) . $this->editor_script ) ) {
-			wp_die( esc_html__( 'Whoops! You need to run `npm run build` for the WDS Block Starter first.', 'mctb' ) );
+			wp_die( esc_html__( 'Whoops! You need to run `npm run build` for the MCTB Block first.', 'mctb' ) );
 		}
 	}
 
@@ -69,28 +70,16 @@ class Multipurpose_Compression_Table_Admin {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Multipurpose_Compression_Table_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Multipurpose_Compression_Table_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
 		// Register editor style.
 		if ( file_exists( plugin_dir_path( dirname( __FILE__ ) ) . $this->editor_style ) ) {
-			wp_register_style(
-				'wdsblocks-editor-style',
+			wp_enqueue_style(
+				'mctb-editor-style',
 				plugin_dir_url( __DIR__ ) .$this->editor_style,
 				[ 'wp-edit-blocks' ],
 				'1.0.0'
 			);
 		}
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/multipurpose-compression-table -admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/multipurpose-compression-table-admin.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -99,21 +88,8 @@ class Multipurpose_Compression_Table_Admin {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Multipurpose_Compression_Table_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Multipurpose_Compression_Table_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-		
 		wp_enqueue_script(
-			'wdsblocks-editor-script',
+			'mctb-editor-script',
 			plugin_dir_url( __DIR__ ) . $this->editor_script,
 			$this->block_dependencies['dependencies'],
 			$this->block_dependencies['version'],

@@ -1,6 +1,6 @@
 import { PREFIX } from '../../../utils/config';
 
-const starterClass = `wp-block-${ PREFIX }-starter`;
+const starterClass = `wp-block-${ PREFIX }`;
 
 /**
  * Handle functionality related to the starter block block.
@@ -8,9 +8,9 @@ const starterClass = `wp-block-${ PREFIX }-starter`;
  * @author BoomDevs
  * @since  2.0.0
  */
-const wdsBlocksStarter = {
+const mctbBlocks = {
     /**
-     * Initial starter block setup.
+     * Initial mctb block setup.
      *
      * @author BoomDevs
      * @since  2.0.0
@@ -27,4 +27,4 @@ const wdsBlocksStarter = {
     },
 };
 
-export default wdsBlocksStarter;
+export default mctbBlocks;

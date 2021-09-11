@@ -61,20 +61,8 @@ class Multipurpose_Compression_Table_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Multipurpose_Compression_Table_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Multipurpose_Compression_Table_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
 		// Register frontend style.
 		if ( file_exists( plugin_dir_path( dirname( __FILE__ ) ) . $this->frontend_style ) ) {
-			
 			wp_register_style(
 				'wdsblocks-style',
 				plugin_dir_url( __DIR__ ) .$this->frontend_style,
@@ -91,19 +79,6 @@ class Multipurpose_Compression_Table_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Multipurpose_Compression_Table_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Multipurpose_Compression_Table_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-		// $asset_file = require plugin_dir_path( dirname( __FILE__ ) ) . 'build/index.asset.php';
 		// Register frontend script.
 		if ( file_exists( plugin_dir_path( dirname( __FILE__ ) ) . $this->frontend_script ) ) {
 			wp_enqueue_script(
@@ -115,8 +90,6 @@ class Multipurpose_Compression_Table_Public {
 				true
 			);
 		}
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/multipurpose-compression-table -public.js', array( 'jquery' ), $this->version, false );
 	}
-
 }

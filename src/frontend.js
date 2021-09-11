@@ -1,2 +1,2 @@
-import wdsBlocksStarter from './blocks/starter/frontend';
+import wdsBlocksStarter from './blocks/table/frontend';
 wdsBlocksStarter.init();

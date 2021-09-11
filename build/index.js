@@ -2,82 +2,36 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/starter/edit.js":
-/*!************************************!*\
-  !*** ./src/blocks/starter/edit.js ***!
-  \************************************/
+/***/ "./src/blocks/table/edit.js":
+/*!**********************************!*\
+  !*** ./src/blocks/table/edit.js ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/config */ "./src/blocks/starter/utils/config.js");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _utils_components_preview_toggle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/components/preview-toggle */ "./src/utils/components/preview-toggle/index.js");
-/* harmony import */ var _utils_hooks_use_preview_toggle__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/hooks/use-preview-toggle */ "./src/utils/hooks/use-preview-toggle/index.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/starter/editor.scss");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Edit; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _importTable_ImportTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./importTable/ImportTable */ "./src/blocks/table/importTable/ImportTable.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/table/editor.scss");
 
 
 
 
-
-
-
-
-
-
-
-
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @author WebDevStudios
- * @since  2.0.0
- * @see    https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- * @param {Object} [props] Properties passed from the editor.
- * @return {WPElement}      Element to render.
- */
 
 function Edit(props) {
   const {
     attributes: {
-      title,
-      contentStyle,
-      backgroundStyle,
-      blockCount: blockCountAttr
+      showModal
     },
-    className,
-    setAttributes,
-    blockCount
+    setAttributes
   } = props;
-  const {
-    showPreview,
-    togglePreview,
-    doubleClick
-  } = (0,_utils_hooks_use_preview_toggle__WEBPACK_IMPORTED_MODULE_9__["default"])(); // Update inner block count attr on prop change.
-
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
-    setAttributes({
-      blockCount
-    });
-  }, [blockCount]); // Check if this is a new block.
-
-  const isNewBlock = !blockCountAttr; // If new/empty block, switch to edit mode.
-
-  if (isNewBlock && showPreview) {
-    togglePreview();
-  }
 
   const onChangeTitle = newTitle => {
     setAttributes({
@@ -85,120 +39,65 @@ function Edit(props) {
     });
   };
 
-  const onChangeTextColor = newColor => {
-    const newColorValue = newColor === undefined ? 'none' : newColor;
+  const testFun = () => {
     setAttributes({
-      contentStyle: {
-        color: newColorValue,
-        textAlign: contentStyle.textAlign
-      }
+      showModal: !showModal
     });
+    console.log("Hello world");
   };
 
-  const onChangeBackgroundColor = newBgcolor => {
-    const newBgcolorValue = newBgcolor === undefined ? 'none' : newBgcolor;
-    setAttributes({
-      backgroundStyle: {
-        backgroundColor: newBgcolorValue
-      }
-    });
-  };
-
-  const onChangeAlignment = newAlignment => {
-    const alignmentValue = newAlignment === undefined ? 'none' : newAlignment;
-    setAttributes({
-      contentStyle: {
-        color: contentStyle.color,
-        textAlign: alignmentValue
-      }
-    });
-  };
-
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
-    value: contentStyle.textAlign,
-    onChange: onChangeAlignment
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_utils_components_preview_toggle__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    showPreview: showPreview,
-    togglePreview: togglePreview
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, {
-    className: className
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Color Settings', 'wdsblocks'),
-    initialOpen: true
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Choose a text color.', 'wdsblocks')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
-    value: contentStyle.color,
-    onChange: onChangeTextColor
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Choose a background color.', 'wdsblocks')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
-    value: backgroundStyle.backgroundColor,
-    onChange: onChangeBackgroundColor
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)("Background color", 'wdsblocks'),
-    initialOpen: true
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: `${className} ${showPreview ? 'preview-mode' : 'edit-mode'}`,
-    onDoubleClick: doubleClick
-  }, showPreview ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: `${className} starter`,
-    style: backgroundStyle,
-    blockCount: blockCount,
-    isAdmin: true
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    className: "block-title",
-    tagName: "h2",
-    formattingControls: [],
-    style: contentStyle,
-    value: title
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _utils_config__WEBPACK_IMPORTED_MODULE_6__.INNER_BLOCKS_PROPS, {
-    __experimentalTagName: 'div',
-    __experimentalPassedProps: {
-      className: 'inner-blocks'
-    },
-    renderAppender: false
-  }))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    className: `${className} starter`,
-    style: backgroundStyle
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    className: "block-title",
-    tagName: "h2",
-    formattingControls: [],
-    style: contentStyle,
-    onChange: onChangeTitle,
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__.__)('Block Title', 'wdsblocks'),
-    keepPlaceholderOnFocus: true,
-    value: title
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _utils_config__WEBPACK_IMPORTED_MODULE_6__.INNER_BLOCKS_PROPS, {
-    orientation: "horizontal"
-  })))));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, showModal ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_importTable_ImportTable__WEBPACK_IMPORTED_MODULE_3__["default"], null) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "mctb-table-import-button",
+    onClick: testFun
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-editor-table"
+  }), "Import Table")));
 }
-
-/* harmony default export */ __webpack_exports__["default"] = ((0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_4__.compose)([(0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.withSelect)((select, props) => {
-  const {
-    blockId
-  } = props; // Get current child block (innerblocks) blockId values.
-
-  const blockCount = select('core/block-editor').getBlockOrder(blockId).length;
-  return {
-    blockCount
-  };
-})])(Edit));
 
 /***/ }),
 
-/***/ "./src/blocks/starter/index.js":
-/*!*************************************!*\
-  !*** ./src/blocks/starter/index.js ***!
-  \*************************************/
+/***/ "./src/blocks/table/importTable/ImportTable.js":
+/*!*****************************************************!*\
+  !*** ./src/blocks/table/importTable/ImportTable.js ***!
+  \*****************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/starter/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/starter/save.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ ImportTable; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function ImportTable() {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `mctb__table_lists`
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, "Hello world"));
+}
+
+/***/ }),
+
+/***/ "./src/blocks/table/index.js":
+/*!***********************************!*\
+  !*** ./src/blocks/table/index.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit */ "./src/blocks/table/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/blocks/table/save.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/config */ "./src/utils/config.js");
-/* harmony import */ var _frontend_style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/style.scss */ "./src/blocks/starter/frontend/style.scss");
+/* harmony import */ var _frontend_style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend/style.scss */ "./src/blocks/table/frontend/style.scss");
 
 
 
@@ -213,12 +112,11 @@ __webpack_require__.r(__webpack_exports__);
  * @see    https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)(`${_utils_config__WEBPACK_IMPORTED_MODULE_4__.PREFIX}/starter`, {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Starter Block', 'mctb'),
-  description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('A starter block with a RichText heading and color options.', 'mctb'),
-  icon: 'admin-network',
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)(`${_utils_config__WEBPACK_IMPORTED_MODULE_4__.PREFIX}/table`, {
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('MCTB Table', 'mctb'),
+  description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('A Ecommerce product listing table.', 'mctb'),
+  icon: 'editor-table',
   category: 'bdpct-blocks',
-  keywords: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('starter block, richtext', 'mctb')],
   attributes: {
     showPreview: {
       type: 'boolean',
@@ -261,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
         color: '#F47C48',
         textAlign: 'center'
       },
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Starter Block', 'mctb')
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('MCTB Table', 'mctb')
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -270,10 +168,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/blocks/starter/save.js":
-/*!************************************!*\
-  !*** ./src/blocks/starter/save.js ***!
-  \************************************/
+/***/ "./src/blocks/table/save.js":
+/*!**********************************!*\
+  !*** ./src/blocks/table/save.js ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -291,18 +189,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @author BoomDevs
- * @since  2.0.0
- * @see    https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
- * @param {Object} [props] Properties passed from the editor.
- * @return {WPElement}      Element to render.
- */
-
 function Save(props) {
   const {
     attributes: {
@@ -311,7 +197,7 @@ function Save(props) {
       backgroundStyle
     }
   } = props;
-  const className = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__.getBlockDefaultClassName)(`${_utils_config__WEBPACK_IMPORTED_MODULE_3__.PREFIX}/starter`);
+  const className = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__.getBlockDefaultClassName)(`${_utils_config__WEBPACK_IMPORTED_MODULE_3__.PREFIX}/table`);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${className} starter`,
     style: backgroundStyle
@@ -320,62 +206,8 @@ function Save(props) {
     style: contentStyle,
     tagName: "h2",
     value: title
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null));
+  }));
 }
-
-/***/ }),
-
-/***/ "./src/blocks/starter/utils/config.js":
-/*!********************************************!*\
-  !*** ./src/blocks/starter/utils/config.js ***!
-  \********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "INNER_BLOCKS_PROPS": function() { return /* binding */ INNER_BLOCKS_PROPS; }
-/* harmony export */ });
-/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
-/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/config */ "./src/utils/config.js");
-
- // import { __ } from '@wordpress/i18n';
-
-/**
- * Filter props for starter InnerBlocks.
- *
- * @author BoomDevs
- * @since  2.0.0
- * @param {Object} [props] InnerBlocks props.
- */
-
-const INNER_BLOCKS_PROPS = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.applyFilters)(`${_utils_config__WEBPACK_IMPORTED_MODULE_1__.PREFIX}.starter.innerBlocksProps`, {
-  allowedBlocks: ['core/paragraph', 'core/buttons', 'core/image'],
-  template: [
-    /** Sample core block template structure
-      [
-      'core/heading',
-      {
-      content: __( 'Title', 'wdsblocks' ),
-      level: 3,
-      align: 'center',
-      },
-      ],
-      [
-      'core/paragraph',
-      {
-      content: __( 'Content', 'wdsblocks' ),
-      align: 'center',
-      },
-      ],
-      [
-      'core/buttons',
-      { align: 'center' },
-      [ [ 'core/button', { text: __( 'Read More', 'wdsblocks' ) } ] ],
-      ],
-     */
-  ]
-});
 
 /***/ }),
 
@@ -386,9 +218,9 @@ const INNER_BLOCKS_PROPS = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.appl
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_starter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/starter */ "./src/blocks/starter/index.js");
+/* harmony import */ var _blocks_table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/table */ "./src/blocks/table/index.js");
 /**
- * WDS Blocks
+ * MCTB Blocks
  *
  * All blocks related JavaScript files should be imported here.
  * You can create a new block folder in this dir and include code
@@ -397,59 +229,7 @@ __webpack_require__.r(__webpack_exports__);
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
-// import './blocks/accordions';
-// import './blocks/accordion-item';
-// import './blocks/carousel';
-// import './blocks/carousel-slide';
- // // Block Variations
-// import './variations/cover';
-// import './variations/columns';
 
-/***/ }),
-
-/***/ "./src/utils/components/preview-toggle/index.js":
-/*!******************************************************!*\
-  !*** ./src/utils/components/preview-toggle/index.js ***!
-  \******************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ PreviewToggle; }
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-/**
- * The PreviewToggle component displays a toolbar button to toggle between "edit" and "preview" block modes.
- *
- * @author BoomDevs
- * @since  2.0.0
- * @param {Object} [props] Properties passed to the component.
- * @return {WPElement}      Element to render.
- */
-
-function PreviewToggle(props) {
-  const {
-    togglePreview,
-    showPreview = true
-  } = props;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToolbarGroup, null, " ", showPreview ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToolbarButton, {
-    icon: "edit",
-    label: "Switch to Edit",
-    onClick: () => togglePreview()
-  }) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToolbarButton, {
-    icon: "welcome-view-site",
-    label: "Switch to Preview",
-    onClick: () => togglePreview()
-  }), " "), " ");
-}
 
 /***/ }),
 
@@ -474,66 +254,10 @@ const CONTAINER_CLASS = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.applyFi
 
 /***/ }),
 
-/***/ "./src/utils/hooks/use-preview-toggle/index.js":
-/*!*****************************************************!*\
-  !*** ./src/utils/hooks/use-preview-toggle/index.js ***!
-  \*****************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ usePreviewToggle; }
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-/**
- * The usePreviewToggle hook handles state for toggling between "edit" and "preview" modes.
- *
- * @author BoomDevs
- * @since  2.0.0
- * @return {Object} Object consisting of state variable and state toggle function.
- */
-
-function usePreviewToggle() {
-  const [showPreview, setPreview] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
-  /**
-   * Toggle between "edit" and "preview" modes by setting `showPreview` to the boolean inverse of its current value.
-   *
-   * @author BoomDevs
-   * @since  2.0.0
-   */
-
-  const togglePreview = () => {
-    setPreview(!showPreview);
-  };
-  /**
-   * Toggle block to "edit" mode on double click.
-   *
-   * @author BoomDevs
-   * @since  2.0.0
-   */
-
-
-  const doubleClick = () => {
-    if (showPreview) {
-      togglePreview();
-    }
-  };
-
-  return {
-    showPreview,
-    togglePreview,
-    doubleClick
-  };
-}
-
-/***/ }),
-
-/***/ "./src/blocks/starter/editor.scss":
-/*!****************************************!*\
-  !*** ./src/blocks/starter/editor.scss ***!
-  \****************************************/
+/***/ "./src/blocks/table/editor.scss":
+/*!**************************************!*\
+  !*** ./src/blocks/table/editor.scss ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -542,25 +266,15 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/blocks/starter/frontend/style.scss":
-/*!************************************************!*\
-  !*** ./src/blocks/starter/frontend/style.scss ***!
-  \************************************************/
+/***/ "./src/blocks/table/frontend/style.scss":
+/*!**********************************************!*\
+  !*** ./src/blocks/table/frontend/style.scss ***!
+  \**********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
-
-/***/ }),
-
-/***/ "react":
-/*!************************!*\
-  !*** external "React" ***!
-  \************************/
-/***/ (function(module) {
-
-module.exports = window["React"];
 
 /***/ }),
 
@@ -581,36 +295,6 @@ module.exports = window["wp"]["blockEditor"];
 /***/ (function(module) {
 
 module.exports = window["wp"]["blocks"];
-
-/***/ }),
-
-/***/ "@wordpress/components":
-/*!************************************!*\
-  !*** external ["wp","components"] ***!
-  \************************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["components"];
-
-/***/ }),
-
-/***/ "@wordpress/compose":
-/*!*********************************!*\
-  !*** external ["wp","compose"] ***!
-  \*********************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["compose"];
-
-/***/ }),
-
-/***/ "@wordpress/data":
-/*!******************************!*\
-  !*** external ["wp","data"] ***!
-  \******************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["data"];
 
 /***/ }),
 
@@ -641,36 +325,6 @@ module.exports = window["wp"]["hooks"];
 /***/ (function(module) {
 
 module.exports = window["wp"]["i18n"];
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
-  \************************************************************/
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ _extends; }
-/* harmony export */ });
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
 
 /***/ })
 
